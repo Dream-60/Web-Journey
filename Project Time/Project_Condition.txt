@@ -1,0 +1,23 @@
+Write HTML and CSS code to style a paragraph inside a div which contain 2 other paragraph. The first paragraph must have background color yellow and text color red, and the second peragraph must have background color blue and text color white. The HTML is written below for your reference. The reference HTML can not be changed to design.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Project Time</title>
+</head>
+<body>
+    <div>
+        <p>for first div Paragraph 1</p>
+        <p>for first div Paragraph 2</p>
+        <p>for first div Paragraph 3</p>
+    </div>
+    <div>
+        <p>for second div Paragraph 1</p>
+        <p>for second div Paragraph 2</p>
+        <p>for second div Paragraph 3</p>
+    </div>
+</body>
+</html>

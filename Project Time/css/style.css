@@ -1,0 +1,9 @@
+div p:first-child {
+    background-color: #f4f800;
+    color: red;
+}
+
+div p:not(:first-child) {
+    background-color: #00b2f8;
+    color: #ffffff;
+}
