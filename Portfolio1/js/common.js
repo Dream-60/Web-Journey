@@ -82,3 +82,31 @@ function appendMessage(text, className) {
   chatBox.scrollTop = chatBox.scrollHeight;
   return msg;
 }
+
+// Contact section scroll detector setup
+document.addEventListener('DOMContentLoaded', () => {
+  const contactSection = document.getElementById('contact');
+  const chatBtn = document.getElementById('chat-toggle-btn');
+  const chatContainer = document.getElementById('chat-container');
+
+  if (contactSection && chatBtn && chatContainer) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            chatBtn.classList.add('chat-scroll-hidden');
+            chatContainer.classList.add('chat-scroll-hidden');
+          } else {
+            chatBtn.classList.remove('chat-scroll-hidden');
+            chatContainer.classList.remove('chat-scroll-hidden');
+          }
+        });
+      },
+      {
+        threshold: 0.2
+      }
+    );
+
+    observer.observe(contactSection);
+  }
+});
