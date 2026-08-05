@@ -513,10 +513,11 @@ body {
   transform: scale(0.8) translateY(20px) !important;
 }
 
-/* Scroll kore contact form-e ashle chatbot hide hone */
+/* Scroll hide animation */
 .chat-scroll-hidden {
   opacity: 0 !important;
   pointer-events: none !important;
   visibility: hidden !important;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transform: translateY(20px) !important;
+  transition: all 0.3s ease-in-out !important;
 }
