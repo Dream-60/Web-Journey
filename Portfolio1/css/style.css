@@ -438,3 +438,77 @@ body {
     visibility: visible;
     transform: translateY(0);
 }
+
+/* Floating Chat Button (Dan Pase Vasne) */
+#chat-toggle-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* Smooth Infinite Floating Animation */
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+/* Hovering effect */
+#chat-toggle-btn:hover {
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.6);
+  animation-play-state: paused; /* Hover korle floating stop hoye interactive hobe */
+}
+
+/* Click animation */
+#chat-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* Up-down Float Effect */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px); /* 8px opore uthbe */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Chatbox window smooth opening animation */
+#chat-container {
+  position: fixed;
+  bottom: 85px;
+  right: 25px;
+  width: 340px;
+  height: 450px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  transform-origin: bottom right;
+}
+
+/* Smooth hide transition */
+.chat-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8) translateY(20px) !important;
+}
