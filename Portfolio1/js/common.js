@@ -83,30 +83,22 @@ function appendMessage(text, className) {
   return msg;
 }
 
-// Contact section scroll detector setup
-document.addEventListener('DOMContentLoaded', () => {
-  const contactSection = document.getElementById('contact');
+window.addEventListener('scroll', () => {
+  const contactSection = document.getElementById('contact'); // Apnar contact section er ID
   const chatBtn = document.getElementById('chat-toggle-btn');
   const chatContainer = document.getElementById('chat-container');
 
   if (contactSection && chatBtn && chatContainer) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            chatBtn.classList.add('chat-scroll-hidden');
-            chatContainer.classList.add('chat-scroll-hidden');
-          } else {
-            chatBtn.classList.remove('chat-scroll-hidden');
-            chatContainer.classList.remove('chat-scroll-hidden');
-          }
-        });
-      },
-      {
-        threshold: 0.2
-      }
-    );
-
-    observer.observe(contactSection);
+    // Contact section er position ebong screen height hisab
+    const rect = contactSection.getBoundingClientRect();
+    
+    // Contact section screen-er vetor ashle detect korbe
+    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+      chatBtn.classList.add('chat-scroll-hidden');
+      chatContainer.classList.add('chat-scroll-hidden');
+    } else {
+      chatBtn.classList.remove('chat-scroll-hidden');
+      chatContainer.classList.remove('chat-scroll-hidden');
+    }
   }
 });
