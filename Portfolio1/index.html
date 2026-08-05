@@ -159,6 +159,30 @@
         <button id="floating-button" href="navber"><i
                 class="fa-solid fa-arrow-up"></i></button>
 
+        <!-- Floating Chatbot Button -->
+        <button id="chat-toggle-btn" onclick="toggleChat()">
+          <span style="font-size: 18px;">💬</span> Ask AI
+        </button>
+        
+        <!-- Chat Window Structure -->
+        <div id="chat-container" class="chat-hidden">
+          <div class="chat-header">
+            <span>🤖 Portfolio Assistant</span>
+            <button onclick="toggleChat()">✕</button>
+          </div>
+          
+          <div id="chat-box">
+            <div class="message bot-message">
+              Hello! Contact me or ask anything about my education, projects, or background!
+            </div>
+          </div>
+          
+          <div class="chat-input-area">
+            <input type="text" id="user-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)" />
+            <button onclick="sendMessage()">Send</button>
+          </div>
+        </div>
+        
         <!-- js link there -->
         <script src="./js/common.js"></script>
     </body>
