@@ -93,7 +93,7 @@ window.addEventListener('scroll', () => {
     const rect = contactSection.getBoundingClientRect();
     
     // Contact section screen-er vetor ashle detect korbe
-    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+    if (rect.top < window.innerHeight && rect.bottom >= -100) {
       chatBtn.classList.add('chat-scroll-hidden');
       chatContainer.classList.add('chat-scroll-hidden');
     } else {
