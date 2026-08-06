@@ -631,3 +631,38 @@ body {
 .chat-input-area button:hover {
   background-color: #1d4ed8;
 }
+
+/* Scroll To Top Button Placement Fix */
+#floating-button {
+    position: fixed;
+    bottom: 25px;
+    left: 25px; /* চ্যাটবট ডানে (Right), এটি বামে (Left) রাখলে ক্লিন দেখাবে */
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-color);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+#floating-button:hover {
+    background: var(--text-primary);
+    color: var(--bg-color);
+}
+
+#floating-button.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
